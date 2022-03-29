@@ -16,7 +16,7 @@ class TextPhotoVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        resultStackView.isHidden = true
         
     }
     
@@ -25,11 +25,13 @@ class TextPhotoVC: UIViewController {
     }
     
     @IBAction func choosePhotoPressed(_ sender: Any) {
+        
+        //Getting Image From Gallery
         let vc = UIImagePickerController()
-                vc.sourceType = .photoLibrary
-                vc.allowsEditing = true
-                vc.delegate = self
-                present(vc, animated: true)
+        vc.sourceType = .photoLibrary
+        vc.allowsEditing = true
+        vc.delegate = self
+        present(vc, animated: true)
     }
     
 }
@@ -46,6 +48,13 @@ extension TextPhotoVC: UIImagePickerControllerDelegate, UINavigationControllerDe
         }
         imageView.image = image
         dismiss(animated: true, completion: nil)
+        
+        //Setting Choose Photo Btn title whether checking there is photo or not
+        if imageView.image != nil {
+            chooseBtn.setTitle("", for: .normal)
+        } else {
+            chooseBtn.setTitle("Choose Photo", for: .normal)
+        }
     }
     
 }
