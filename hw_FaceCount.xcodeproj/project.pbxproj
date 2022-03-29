@@ -7,22 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		040578B427F2E6E1003E456D /* TextPhotoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040578B227F2E6E1003E456D /* TextPhotoVC.swift */; };
+		040578B527F2E6E1003E456D /* TextPhotoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040578B327F2E6E1003E456D /* TextPhotoVC.xib */; };
+		040578B827F2E6F0003E456D /* FaceCountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040578B627F2E6F0003E456D /* FaceCountVC.swift */; };
+		040578B927F2E6F0003E456D /* FaceCountVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040578B727F2E6F0003E456D /* FaceCountVC.xib */; };
+		040578BB27F2E720003E456D /* MainTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040578BA27F2E720003E456D /* MainTabBar.swift */; };
 		04D0390627F2E2A400A7E036 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D0390527F2E2A400A7E036 /* AppDelegate.swift */; };
 		04D0390F27F2E2A500A7E036 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04D0390E27F2E2A500A7E036 /* Assets.xcassets */; };
 		04D0391227F2E2A500A7E036 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04D0391027F2E2A500A7E036 /* LaunchScreen.storyboard */; };
-		04D0391B27F2E2DE00A7E036 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D0391927F2E2DE00A7E036 /* MainVC.swift */; };
-		04D0391C27F2E2DE00A7E036 /* MainVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04D0391A27F2E2DE00A7E036 /* MainVC.xib */; };
 		DE2D6E73DAF4856C60A908DD /* Pods_hw_FaceCount.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9957C1C5BE09E481CD208111 /* Pods_hw_FaceCount.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		040578B227F2E6E1003E456D /* TextPhotoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextPhotoVC.swift; sourceTree = "<group>"; };
+		040578B327F2E6E1003E456D /* TextPhotoVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextPhotoVC.xib; sourceTree = "<group>"; };
+		040578B627F2E6F0003E456D /* FaceCountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceCountVC.swift; sourceTree = "<group>"; };
+		040578B727F2E6F0003E456D /* FaceCountVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FaceCountVC.xib; sourceTree = "<group>"; };
+		040578BA27F2E720003E456D /* MainTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBar.swift; sourceTree = "<group>"; };
 		04D0390227F2E2A400A7E036 /* hw_FaceCount.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hw_FaceCount.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04D0390527F2E2A400A7E036 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04D0390E27F2E2A500A7E036 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04D0391127F2E2A500A7E036 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04D0391327F2E2A500A7E036 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		04D0391927F2E2DE00A7E036 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
-		04D0391A27F2E2DE00A7E036 /* MainVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainVC.xib; sourceTree = "<group>"; };
 		3CC65B0A8712914B9AEEFE07 /* Pods-hw_FaceCount.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hw_FaceCount.release.xcconfig"; path = "Target Support Files/Pods-hw_FaceCount/Pods-hw_FaceCount.release.xcconfig"; sourceTree = "<group>"; };
 		9957C1C5BE09E481CD208111 /* Pods_hw_FaceCount.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hw_FaceCount.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8DCEABC9DE5E76DDFB08039 /* Pods-hw_FaceCount.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hw_FaceCount.debug.xcconfig"; path = "Target Support Files/Pods-hw_FaceCount/Pods-hw_FaceCount.debug.xcconfig"; sourceTree = "<group>"; };
@@ -65,8 +71,11 @@
 				04D0390E27F2E2A500A7E036 /* Assets.xcassets */,
 				04D0391027F2E2A500A7E036 /* LaunchScreen.storyboard */,
 				04D0391327F2E2A500A7E036 /* Info.plist */,
-				04D0391927F2E2DE00A7E036 /* MainVC.swift */,
-				04D0391A27F2E2DE00A7E036 /* MainVC.xib */,
+				040578B227F2E6E1003E456D /* TextPhotoVC.swift */,
+				040578B327F2E6E1003E456D /* TextPhotoVC.xib */,
+				040578B627F2E6F0003E456D /* FaceCountVC.swift */,
+				040578B727F2E6F0003E456D /* FaceCountVC.xib */,
+				040578BA27F2E720003E456D /* MainTabBar.swift */,
 			);
 			path = hw_FaceCount;
 			sourceTree = "<group>";
@@ -77,7 +86,6 @@
 				B8DCEABC9DE5E76DDFB08039 /* Pods-hw_FaceCount.debug.xcconfig */,
 				3CC65B0A8712914B9AEEFE07 /* Pods-hw_FaceCount.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -149,7 +157,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04D0391C27F2E2DE00A7E036 /* MainVC.xib in Resources */,
+				040578B527F2E6E1003E456D /* TextPhotoVC.xib in Resources */,
+				040578B927F2E6F0003E456D /* FaceCountVC.xib in Resources */,
 				04D0391227F2E2A500A7E036 /* LaunchScreen.storyboard in Resources */,
 				04D0390F27F2E2A500A7E036 /* Assets.xcassets in Resources */,
 			);
@@ -204,8 +213,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				040578BB27F2E720003E456D /* MainTabBar.swift in Sources */,
+				040578B427F2E6E1003E456D /* TextPhotoVC.swift in Sources */,
+				040578B827F2E6F0003E456D /* FaceCountVC.swift in Sources */,
 				04D0390627F2E2A400A7E036 /* AppDelegate.swift in Sources */,
-				04D0391B27F2E2DE00A7E036 /* MainVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
