@@ -8,6 +8,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import SwiftSpinner
 
 class TextPhotoVC: UIViewController {
     
@@ -25,6 +26,9 @@ class TextPhotoVC: UIViewController {
     @IBAction func detectTextBtnPressed(_ sender: Any) {
         
         self.sendImageAndGetText(img: imageView.image!) { text in
+            
+            SwiftSpinner.hide()
+            
             self.resultStackView.isHidden = false
             self.resultLbl.text = text
             self.resultLbl.textColor = .black
@@ -61,6 +65,8 @@ class TextPhotoVC: UIViewController {
         request.addValue("Basic \(base64LoginString)", forHTTPHeaderField: "Authorization")
         
         AF.upload(multipartFormData: { multipart in
+            
+            SwiftSpinner.show("Searching for text...")
             
             let imgData = img.pngData()!
             

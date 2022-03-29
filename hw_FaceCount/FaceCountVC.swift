@@ -8,6 +8,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import SwiftSpinner
 
 class FaceCountVC: UIViewController {
 
@@ -25,6 +26,8 @@ class FaceCountVC: UIViewController {
     @IBAction func detectFacesBtnPressed(_ sender: Any) {
         
         self.sendImageAndGetFacesCount(img: imageView.image!) { count in
+            
+            SwiftSpinner.hide()
             
             self.resultStackView.isHidden = false
             self.resultLbl.text = "Detected \(count!) faces on photo"
@@ -63,6 +66,8 @@ class FaceCountVC: UIViewController {
         request.addValue("Basic \(base64LoginString)", forHTTPHeaderField: "Authorization")
         
         AF.upload(multipartFormData: { multipart in
+            
+            SwiftSpinner.show("Searching for faces...")
             
             let imgData = img.pngData()!
             
