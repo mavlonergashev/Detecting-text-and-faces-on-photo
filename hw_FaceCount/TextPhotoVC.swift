@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class TextPhotoVC: UIViewController {
     
@@ -22,6 +24,17 @@ class TextPhotoVC: UIViewController {
     
     @IBAction func detectTextBtnPressed(_ sender: Any) {
         
+        self.sendImageAndGetText(img: imageView.image!) { text in
+            self.resultStackView.isHidden = false
+            self.resultLbl.text = text
+            self.resultLbl.textColor = .black
+            
+            if text == "" {
+                self.resultLbl.text = "No text was found on photo"
+                self.resultLbl.textColor = .red
+            }
+        }
+        
     }
     
     @IBAction func choosePhotoPressed(_ sender: Any) {
@@ -32,6 +45,48 @@ class TextPhotoVC: UIViewController {
         vc.allowsEditing = true
         vc.delegate = self
         present(vc, animated: true)
+    }
+    
+    func sendImageAndGetText(img: UIImage, done: @escaping (String?) -> Void) {
+        
+        let username = "acc_7c313d0c50e0078"
+        let password = "f8d426959d4f08f419e05f2e44cb9e59"
+        let loginString = String(format: "%@:%@", username, password)
+        let loginData = loginString.data(using: String.Encoding.utf8)!
+        let base64LoginString = loginData.base64EncodedString()
+        
+        var request = URLRequest(url: URL(string: "https://api.imagga.com/v2/text")!)
+        
+        request.httpMethod = "POST"
+        request.addValue("Basic \(base64LoginString)", forHTTPHeaderField: "Authorization")
+        
+        AF.upload(multipartFormData: { multipart in
+            
+            let imgData = img.pngData()!
+            
+            multipart.append(imgData, withName: "image", fileName: "img.png", mimeType: "image/png")
+            
+        }, with: request).response { response in
+            if let data = response.data {
+                
+                print("Succesful Response")
+                
+                let jsonData = JSON(data)
+                
+                var newText = ""
+                
+                for text in jsonData["result"]["text"].arrayValue {
+                    newText = newText + text["data"].stringValue + "\n"
+                }
+                
+                done(newText)
+                
+            } else {
+                done(nil)
+                print(response.error.debugDescription)
+            }
+        }
+        
     }
     
 }
