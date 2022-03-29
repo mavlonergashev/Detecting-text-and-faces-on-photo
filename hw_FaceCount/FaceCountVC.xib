@@ -10,6 +10,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FaceCountVC" customModule="hw_FaceCount" customModuleProvider="target">
             <connections>
+                <outlet property="chooseBtn" destination="eVF-0I-v26" id="Vmt-CR-iUx"/>
+                <outlet property="imageView" destination="eJo-gO-mzB" id="PTl-PK-se5"/>
+                <outlet property="resultLbl" destination="oxV-HK-SwJ" id="sqV-H4-DBy"/>
+                <outlet property="resultStackView" destination="GDI-mT-Mc6" id="UBB-ag-JHr"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -37,6 +41,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="374" height="253"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" title="Choose Photo"/>
+                                    <connections>
+                                        <action selector="choosePhotoBtnPressed:" destination="-1" eventType="touchUpInside" id="yQa-82-Obd"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="0.93141475340000002" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -55,6 +62,9 @@
                             <rect key="frame" x="0.0" y="334.5" width="374" height="31"/>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain" title="Detect Faces"/>
+                            <connections>
+                                <action selector="detectFacesBtnPressed:" destination="-1" eventType="touchUpInside" id="mCf-zV-LZe"/>
+                            </connections>
                         </button>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="GDI-mT-Mc6">
                             <rect key="frame" x="0.0" y="395.5" width="374" height="46"/>

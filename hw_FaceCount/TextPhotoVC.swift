@@ -25,7 +25,27 @@ class TextPhotoVC: UIViewController {
     }
     
     @IBAction func choosePhotoPressed(_ sender: Any) {
+        let vc = UIImagePickerController()
+                vc.sourceType = .photoLibrary
+                vc.allowsEditing = true
+                vc.delegate = self
+                present(vc, animated: true)
+    }
+    
+}
+
+//MARK: - Image Picker -
+
+extension TextPhotoVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
+        guard let image = info[.editedImage] as? UIImage else {
+            print("No Image found")
+            return
+        }
+        imageView.image = image
+        dismiss(animated: true, completion: nil)
     }
     
 }
